@@ -1,0 +1,19 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+document.addEventListener("DOMContentLoaded", function() {
+  var hasVisited = localStorage.getItem("hasVisited");
+  if (!hasVisited && window.location.pathname === '/') {
+    var welcomeBox = document.createElement("div");
+    welcomeBox.setAttribute("id", "welcome-box");
+    welcomeBox.innerHTML = "<h1>Opmærksomhed!</h1> <p>Dette er et skoleprojekt!</p>";
+
+    var body = document.querySelector("body");
+    body.insertBefore(welcomeBox, body.firstChild);
+
+    setTimeout(function() {
+      welcomeBox.remove();
+      localStorage.setItem("hasVisited", true);
+    }, 5000);
+  }
+});
