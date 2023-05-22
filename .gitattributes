@@ -17,3 +17,25 @@ document.addEventListener("DOMContentLoaded", function() {
     }, 5000);
   }
 });
+
+
+#welcome-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #7a1139;s
+  padding: 100px;
+  text-align: center;
+  z-index: 9999;
+}
+
+#welcome-box h1 {
+  font-size: 50px;
+  color: white;
+}
+
+#welcome-box p {
+  font-size: 16px;
+  color: #666;
+}
