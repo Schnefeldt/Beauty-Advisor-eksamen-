@@ -1,0 +1,37 @@
+document.addEventListener("DOMContentLoaded", function() {
+  var hasVisited = localStorage.getItem("hasVisited");
+  if (!hasVisited && window.location.pathname === '/') {
+    var welcomeBox = document.createElement("div");
+    welcomeBox.setAttribute("id", "welcome-box");
+    welcomeBox.innerHTML = "<h1>Opmærksomhed!</h1> <p>Dette er et skoleprojekt!</p>";
+
+    var body = document.querySelector("body");
+    body.insertBefore(welcomeBox, body.firstChild);
+
+    setTimeout(function() {
+      welcomeBox.remove();
+      localStorage.setItem("hasVisited", true);
+    }, 5000);
+  }
+});
+
++#welcome-box {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #7a1139;s
+  padding: 100px;
+  text-align: center;
+  z-index: 9999;
+}
+
+#welcome-box h1 {
+  font-size: 50px;
+  color: white;
+}
+
+#welcome-box p {
+  font-size: 16px;
+  color: #666;
+}
